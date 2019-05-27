@@ -12,7 +12,7 @@ import {
   updateInterest
 } from "../redux/actions";
 import { Content, Icon, Picker, Form } from "native-base";
-
+var deviceWidth = Dimensions.get("window").width;
 console.disableYellowBox = true;
 
 import {
@@ -115,9 +115,9 @@ class Profiles extends React.Component {
           </Text>
           <Content
             style={{
-              backgroundColor: "white",
-              width: width / 1.1,
-              borderRadius: 20,
+              backgroundColor: "#fff",
+              width: deviceWidth - 27,
+              borderRadius: 25,
               borderColor: '#f0f0f0',
               borderWidth: 1,
             }}
@@ -126,7 +126,7 @@ class Profiles extends React.Component {
               <Picker
                 mode="dropdown"
                 iosHeader="Select one"
-                iosIcon={<Icon name="arrow-down" />}
+                iosIcon={<Icon style={{marginLeft: -10}} name="arrow-down" />}
                 style={{ width: width / 1.1, borderRadius: 20 }}
                 selectedValue={this.state.interested}
                 onValueChange={value => {
@@ -142,9 +142,9 @@ class Profiles extends React.Component {
             </Form>
           </Content>
 
-          <Text style={styles.bold}>About</Text>
+          <Text style={styles.aboutBold}>About</Text>
           <TextInput
-            maxLength={400}
+            maxLength={200}
             placeholder="Write something useful (max. 400 characters)"
             multiline={true}
             numberOfLines={10}
@@ -155,14 +155,16 @@ class Profiles extends React.Component {
         </View>
 
 
-      
+      <View style={styles.imgRowProfile}>
         <TouchableOpacity onPress={() => this.props.dispatch(logout())}>
-          <Text style={styles.logoutButton}>Logout</Text>
+          <Text style={styles.imgLogout}>Logout</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() =>
           this.deleteUser()}>
-          <Text style={styles.deleteAccount}>Delete Account</Text>
+          <Text style={styles.imgDelete}>Delete Account</Text>
         </TouchableOpacity>
+        </View>
+        
         <TouchableOpacity onPress={() => this.props.navigation.navigate("Admin")}>
           <Text style={styles.admin}>Contact us</Text>
         </TouchableOpacity>

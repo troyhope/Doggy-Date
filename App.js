@@ -1,3 +1,4 @@
+import { StatusBar } from 'react-native';
 import React from 'react';
 import Login from './screens/Login';
 import reducers from './redux/reducers';
@@ -15,6 +16,7 @@ export default class App extends React.Component {
 
 
   render() {
+  	StatusBar.setBarStyle('dark-content', true);
     return (
       <Provider store={store}>
         <Login/>

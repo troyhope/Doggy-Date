@@ -91,7 +91,7 @@ class Matches extends React.Component {
   };
 
   render() {
-
+console.log(this.state.chats)
 
     var swipeBtns = [
     {
@@ -119,7 +119,7 @@ class Matches extends React.Component {
               close={this.state.sectionID !== ind}
                 right={swipeBtns}
                 autoClose={true}
-                backgroundColor="#F8F8FF"
+                backgroundColor="#fff"
                 key={ind}
                 rowID={ind}
                 sectionID={ind}
@@ -141,7 +141,7 @@ class Matches extends React.Component {
                     source={{ uri: uri.user.photoUrl + "?width=900" }}
                   />
                   <Text style={[styles.bold1, styles.center1]}>
-                    {uri.user.name.split(" ")[0]}
+                    {uri.user.name.split(' ')[0]}
                   </Text>
                 </TouchableOpacity>
               </Swipeout>

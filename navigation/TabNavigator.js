@@ -62,7 +62,7 @@ export default createMaterialTopTabNavigator(
   {
     navigationOptions: {
       headerStyle: {
-        backgroundColor: '#212121',
+        backgroundColor: '#fff',
       },
       header: null
     },
