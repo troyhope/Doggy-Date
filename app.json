@@ -8,7 +8,7 @@
     "facebookAppId": "1512084618926540",
     "facebookDisplayName": "DoggyDate",
     "platforms": ["ios", "android"],
-    "version": "1.0.2",
+    "version": "1.0.3",
     "orientation": "portrait",
     "splash": {
       "image": "./assets/doggy-splash12.png",
@@ -21,7 +21,7 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "bundleIdentifier": "com.doggydate.doggydate",
-      "buildNumber": "1.0.2",
+      "buildNumber": "1.0.3",
       "infoPlist": {
           "NSLocationWhenInUseUsageDescription": "Allow DoggyDate to use your location in order to find pets to hang out with in your area"
     }

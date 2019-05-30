@@ -140,7 +140,7 @@ console.log(this.state.chats)
                     style={styles.img1}
                     source={{ uri: uri.user.photoUrl + "?width=900" }}
                   />
-                  <Text style={[styles.bold1, styles.center1]}>
+                  <Text style={[styles.bold1, Platform.OS === 'android' ?styles.center2 : styles.center1]}>
                     {uri.user.name.split(' ')[0]}
                   </Text>
                 </TouchableOpacity>

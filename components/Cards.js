@@ -44,7 +44,7 @@ class Cards extends React.Component {
 
     console.log("this.state0000000000000--------",this.state.num)
     return (
-      <TouchableOpacity onPress={() => this.nextPhoto()}>
+      <TouchableOpacity activeOpacity={0.9} onPress={() => this.nextPhoto()}>
         <ImageBackground
           style={styles.card}
           source={this.props.images.length > 1 ? {

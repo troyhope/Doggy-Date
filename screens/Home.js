@@ -166,7 +166,9 @@ class Home extends React.Component {
         {this.state.cards.length > 0 ? (
           <SwipeCards
             cards={this.state.cards}
-            stack={false}
+            stack={true}
+            stackOffsetX={7}
+            smoothTransition={true}
             renderCard={cardData => <Cards {...cardData} />}
             renderNoMoreCards={() => <NoCards />}
             showYup={true}

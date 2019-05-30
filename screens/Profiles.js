@@ -145,17 +145,19 @@ class Profiles extends React.Component {
           <Text style={styles.aboutBold}>About</Text>
           <TextInput
             maxLength={200}
-            placeholder="Write something useful (max. 400 characters)"
+            placeholder="Write something useful (max. 200 characters)"
             multiline={true}
-            numberOfLines={10}
+            enableOnAndroid={true} 
+            enableAutoAutomaticScroll={(Platform.OS === 'ios')}
+            numberOfLines={Platform.OS === 'ios' ?10: 0}
             onChangeText={text => this.props.dispatch(updateAbout(text))}
             value={this.props.user.aboutMe}
-            style={styles.textInput}
+            style={Platform.OS === 'android' ?styles.textInputAndroid : styles.textInput}
           />
         </View>
 
 
-      <View style={styles.imgRowProfile}>
+      <View style={styles.logoutDeleteButtons}>
         <TouchableOpacity onPress={() => this.props.dispatch(logout())}>
           <Text style={styles.imgLogout}>Logout</Text>
         </TouchableOpacity>

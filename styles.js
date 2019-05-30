@@ -82,6 +82,12 @@ var styles = StyleSheet.create({
     textAlign: "center",
     top: 30
   },
+  center2: {
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    
+  },
   img: {
     width: 100,
     height: 100,
@@ -95,38 +101,39 @@ var styles = StyleSheet.create({
   imgLogout: {
     overflow: "hidden",
     textAlign: "center",
-    width: 165,
+    width: deviceWidth / 2.2,
     height: 50,
     borderRadius: 25,
-    margin: 10,
-    borderWidth: 2,
-    borderColor: '#249bbf',
+    marginLeft: 15,
+    borderWidth: 1,
+    borderColor: "#F0F0F0",
     backgroundColor: "#fff",
     alignSelf:"center",
     justifyContent: 'center',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "normal",
-    color: '#02457a',
+    color: '#249bbf',
     textAlignVertical: "center",
-    padding: 11,
+    padding: 14,
+
   },
   imgDelete: {
     overflow: "hidden",
     textAlign: "center",
-    width: 165,
+    width: deviceWidth/2.2,
     height: 50,
     borderRadius: 25,
-    margin: 10,
-    borderWidth: 2,
-    borderColor: '#249bbf',
+    marginRight: 15,
+    borderWidth: 1,
+    borderColor: "#F0F0F0",
     backgroundColor: "#fff",
     alignSelf:"center",
     justifyContent: 'center',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "normal",
-    color: '#02457a',
+    color: '#249bbf',
     textAlignVertical: "center",
-    padding: 11,
+    padding: 14,
 
   },
   img1: {
@@ -144,9 +151,17 @@ var styles = StyleSheet.create({
     padding: 2
   },
    imgRowProfile: {
+    
     flexWrap: "wrap",
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "center"
+
+  },
+  logoutDeleteButtons: {
+    
+    flexWrap: "wrap",
+    flexDirection: "row",
+    justifyContent: "space-between"
 
   },
   report: {
@@ -168,9 +183,23 @@ var styles = StyleSheet.create({
     borderWidth: 1,
     width: deviceWidth - 27,
     borderRadius: 22,
+    marginBottom: 50,
     overflow: "hidden",
     marginBottom: 30,
     maxHeight: 200,
+    fontSize: 16,
+    numberOfLines: 10,
+  },
+  textInputAndroid: {
+    width: deviceWidth,
+    padding: 15,
+    backgroundColor: "#fff",
+    borderColor: "#F0F0F0",
+    borderWidth: 1,
+    width: deviceWidth - 27,
+    borderRadius: 22,
+    overflow: "hidden",
+    marginBottom: 30,
     fontSize: 16,
   },
   bold: {
@@ -251,7 +280,7 @@ var styles = StyleSheet.create({
     borderWidth: 1,
     //marginBottom: 30,
     textAlignVertical: "center",
-    //marginTop: 50,
+    marginTop: 50,
     
   },
   deleteAccount: {
@@ -271,7 +300,7 @@ var styles = StyleSheet.create({
    
     //marginBottom: 30,
     textAlignVertical: "center",
-    marginTop: 1,
+    marginTop: 50,
   },
   admin: {
     height: 50,
@@ -280,7 +309,7 @@ var styles = StyleSheet.create({
     padding: 15,
     margin: 11,
     justifyContent: 'center',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "bold",
     color: "grey",
     //marginBottom: 30,
