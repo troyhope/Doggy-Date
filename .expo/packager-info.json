@@ -1,10 +1,10 @@
 {
-  "devToolsPort": 19002,
+  "devToolsPort": 19003,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 1539,
+  "packagerPid": 12407,
   "expoServerNgrokUrl": "https://rm-jqj.trogs.doggydate.exp.direct",
   "packagerNgrokUrl": "https://packager.rm-jqj.trogs.doggydate.exp.direct",
-  "ngrokPid": 1557,
+  "ngrokPid": 12434,
   "webpackServerPort": null
 }

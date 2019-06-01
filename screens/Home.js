@@ -94,6 +94,10 @@ class Home extends React.Component {
       });
   }
 
+  handleClick() {
+    console.log('Click happened');
+  }
+
   _onRefresh = () => {
     this.setState({ refreshing: true });
     this.getMyself();
@@ -166,7 +170,7 @@ class Home extends React.Component {
         {this.state.cards.length > 0 ? (
           <SwipeCards
             cards={this.state.cards}
-            stack={true}
+            stack={false}
             stackOffsetX={7}
             smoothTransition={true}
             renderCard={cardData => <Cards {...cardData} />}
@@ -177,6 +181,7 @@ class Home extends React.Component {
             handleNope={this.handleNope.bind(this)}
             handleMaybe={this.handleMaybe}
             hasMaybeAction={false}
+            onClickHandler={this.handleClick.bind(this)}
           />
         ) : (
         <Image style={styles.cardsNo} source={require('../assets/testNoCards.png')} />

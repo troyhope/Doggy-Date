@@ -33,7 +33,11 @@ class Login extends React.Component {
       "1512084618926540",
       {
         permissions: ["public_profile"]
+      },
+      {
+        behavior: "native"
       }
+
     );
     if (type === "success") {
       // Build Firebase credential with the Facebook access token.
