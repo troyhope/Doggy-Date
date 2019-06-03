@@ -6,24 +6,63 @@ import { getCards, getInterest, verifyCards } from "../redux/actions";
 import SwipeCards from "react-native-swipe-cards";
 import Cards from "../components/Cards.js";
 import NoCards from "../components/NoCards.js";
+import AppIntroSlider from 'react-native-app-intro-slider';
 import dismissKeyboard from "dismissKeyboard";
-import { Text, ScrollView, RefreshControl,Image,Dimensions } from "react-native";
+import { Text, ScrollView, RefreshControl,Image,Dimensions, AsyncStorage } from "react-native";
 const win = Dimensions.get('window');
+
+const slides = [
+  {
+    key: 'somethun',
+    title: 'Title 1',
+    text: 'Description.',
+   
+    backgroundColor: '#59b2ab',
+  },
+  {
+    key: 'somethun-dos',
+    title: 'Title 2',
+    text: 'Other cool stuff',
+   
+    backgroundColor: '#febe29',
+  },
+  {
+    key: 'somethun1',
+    title: 'Rocket guy',
+    text: 'YEET',
+   
+    backgroundColor: '#22bcb5',
+  }
+];
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      showRealApp: false,
       cards: [],
       actualcards: [],
-      refreshing: false
+      refreshing: false,
+      loading: true,
     };
+    _renderItem = (item) => {
+    return (
+      <View style={styles.slide}>
+        <Text style={styles.title}>{item.title}</Text>
+        <Image source={item.image} />
+        <Text style={style.text}>{item.text}</Text>
+      </View>
+    );
+  }
+ 
     this.props.navigation.setParams({ getCards: this.getMyself });
     this.getMyself();
   }
 
   componentDidMount() {
-    dismissKeyboard();
+     AsyncStorage.getItem('first_time').then((value) => {
+      this.setState({ showRealApp: !!value, loading: false });
+    });
   }
 
   componentWillMount() {
@@ -156,9 +195,19 @@ class Home extends React.Component {
         }
       });
   };
+  _onDone = () => {
+    // User finished the introduction. Show real app through
+    // navigation or simply by controlling state
+    AsyncStorage.setItem('first_time', 'true').then(() => {
+      this.setState({ showRealApp: true });
+        this.props.navigation.navigate('Home');
+    });
+  }
 
   render() {
+    if (this.state.showRealApp) {
     return (
+ 
       <ScrollView
       refreshControl={
         <RefreshControl
@@ -190,8 +239,17 @@ class Home extends React.Component {
           //  height: 500,
           //  resizeMode: 'contain'}} source={require('../assets/hello.png')} />
         )}
-      </ScrollView>
-    );
+      </ScrollView>  );
+    } else {
+      return <AppIntroSlider 
+      renderItem={this._renderItem} slides={slides} onDone={this._onDone}/>;
+    }
+      
+      
+
+            
+            
+   
   }
 }
 

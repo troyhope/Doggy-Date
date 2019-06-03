@@ -32,10 +32,8 @@ class Login extends React.Component {
     const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync(
       "1512084618926540",
       {
-        permissions: ["public_profile"]
-      },
-      {
-        behavior: "native"
+        permissions: ["public_profile"],
+        behavior: this.isAStandaloneApp() ? 'native' : 'web',
       }
 
     );
@@ -54,6 +52,10 @@ class Login extends React.Component {
         });
     }
   };
+
+  isAStandaloneApp = () => {
+    return !(Platform.OS === 'ios' && Expo.Constants.appOwnership === 'expo');
+  }
 
   render() {
     if (this.props.loggedIn) {

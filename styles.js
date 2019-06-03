@@ -23,6 +23,14 @@ var styles = StyleSheet.create({
     flex: 1,
      
   },
+  buttonCircle: {
+    width: 40,
+    height: 40,
+    backgroundColor: 'rgba(0, 0, 0, .2)',
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   contact: {
     flex: 1,
     backgroundColor: "#F8F8FF"
