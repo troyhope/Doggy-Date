@@ -408,6 +408,30 @@ var styles = StyleSheet.create({
     //borderTopWidth: 0.5,
     borderBottomColor: "#F0F0F0",
     borderBottomWidth: 0.5
+  },
+  mainContentSliders: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  },
+  image: {
+    width: 320,
+    height: 320,
+  },
+  textSliders: {
+    color: 'rgba(255, 255, 255, 0.8)',
+    backgroundColor: 'transparent',
+    textAlign: 'center',
+    paddingHorizontal: 16,
+    marginBottom: 220,
+    fontSize: 19,
+  },
+  titleSliders: {
+    fontSize: 22,
+    color: 'white',
+    backgroundColor: 'transparent',
+    textAlign: 'center',
+    marginBottom: 20,
   }
 
 });

@@ -1,41 +1,45 @@
 import React from "react";
 import * as firebase from "firebase";
 import styles from "../styles";
+import { Ionicons, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { connect } from "react-redux";
 import { getCards, getInterest, verifyCards } from "../redux/actions";
 import SwipeCards from "react-native-swipe-cards";
 import Cards from "../components/Cards.js";
 import NoCards from "../components/NoCards.js";
 import AppIntroSlider from 'react-native-app-intro-slider';
+import { LinearGradient } from 'expo';
 import dismissKeyboard from "dismissKeyboard";
-import { Text, ScrollView, RefreshControl,Image,Dimensions, AsyncStorage } from "react-native";
+import { Text, ScrollView, RefreshControl,Image,Dimensions, AsyncStorage, View } from "react-native";
 const win = Dimensions.get('window');
 
 const slides = [
   {
     key: 'somethun',
-    title: 'Title 1',
-    text: 'Description.',
-   
-    backgroundColor: '#59b2ab',
+    title: 'WELCOME TO DOGGYDATE!',
+    text: 'After this introduction you will find different animals or pet enthusiasts to swipe through depending on your preference.',
+    icon2: 'human-greeting',
+    colors: ['#bde1ff', '#155d99'],
   },
   {
     key: 'somethun-dos',
-    title: 'Title 2',
-    text: 'Other cool stuff',
-   
-    backgroundColor: '#febe29',
+    title: 'VIEWING PHOTOS.',
+    text: 'Press on a users profile to cycle through their other photos!',
+    icon1: 'touch-app',
+    colors: ['#bde1ff', '#155d99'],
   },
   {
     key: 'somethun1',
-    title: 'Rocket guy',
-    text: 'YEET',
-   
-    backgroundColor: '#22bcb5',
+    title: 'SWIPING USERS',
+    text: 'Swipe right on a profile if you are interested. \n\nSwipe left on a profile if you are not interested.',
+    icon2: 'gesture-swipe-horizontal',
+    colors: ['#bde1ff', '#155d99'],
   }
 ];
 
 class Home extends React.Component {
+
+
   constructor(props) {
     super(props);
     this.state = {
@@ -45,19 +49,15 @@ class Home extends React.Component {
       refreshing: false,
       loading: true,
     };
-    _renderItem = (item) => {
-    return (
-      <View style={styles.slide}>
-        <Text style={styles.title}>{item.title}</Text>
-        <Image source={item.image} />
-        <Text style={style.text}>{item.text}</Text>
-      </View>
-    );
-  }
+    
+
  
     this.props.navigation.setParams({ getCards: this.getMyself });
     this.getMyself();
   }
+
+  
+
 
   componentDidMount() {
      AsyncStorage.getItem('first_time').then((value) => {
@@ -204,6 +204,26 @@ class Home extends React.Component {
     });
   }
 
+_renderItem = props => (
+    <LinearGradient
+      style={[styles.mainContentSliders, {
+        width: props.width,
+        height: props.height,
+      }]}
+      colors={props.colors}
+      start={{x: 0, y: .1}} end={{x: .1, y: 1}}
+    >
+      
+       <MaterialIcons style={{ backgroundColor: 'transparent', marginTop: 100 }} name={props.icon1} size={200} color="white" />
+       <MaterialCommunityIcons style={{ backgroundColor: 'transparent' }} name={props.icon2} size={200} color="white" />
+      <View>
+        <Text style={styles.titleSliders}>{props.title}</Text>
+        <Text style={styles.textSliders}>{props.text}</Text>
+      </View>
+    </LinearGradient>
+  );
+  
+
   render() {
     if (this.state.showRealApp) {
     return (
@@ -241,8 +261,11 @@ class Home extends React.Component {
         )}
       </ScrollView>  );
     } else {
-      return <AppIntroSlider 
-      renderItem={this._renderItem} slides={slides} onDone={this._onDone}/>;
+      return <AppIntroSlider
+        slides={slides}
+        renderItem={this._renderItem}
+        bottomButton
+      />
     }
       
       

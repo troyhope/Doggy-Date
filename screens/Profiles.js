@@ -137,7 +137,7 @@ class Profiles extends React.Component {
                 }}
               >
                 <Picker.Item label="Dogs & Pets" value="dogs" />
-                <Picker.Item label="Walker / Pet Sitter" value="walker" />
+                <Picker.Item label="Walker / Pet Sitter / Adoption" value="walker" />
               </Picker>
             </Form>
           </Content>
