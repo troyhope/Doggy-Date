@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles";
 import * as firebase from "firebase";
 import { connect } from "react-redux";
+import Slider from "react-native-slider";
 import { Ionicons } from "@expo/vector-icons";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import {
@@ -29,7 +30,8 @@ var width = Dimensions.get("window").width; //full width
 class Profiles extends React.Component {
   state = {
     interested: this.props.interested,
-    isVisible: false
+    isVisible: false,
+    value: 20
   };
 
   deleteImage() {
@@ -155,6 +157,31 @@ class Profiles extends React.Component {
             style={Platform.OS === 'android' ?styles.textInputAndroid : styles.textInput}
           />
         </View>
+
+        <View style={{alignSelf: 'center', flex: 1,flexDirection: "column",marginBottom: 50 , borderRadius: 25,
+              borderColor: '#f0f0f0',
+              borderWidth: 1, 
+              backgroundColor: '#fff',
+              width: deviceWidth - 27}}>
+        <Text style={[styles.aboutBold, styles.center]}>Distance</Text>
+       
+        <View style={styles.containerSlider}>
+        <Slider
+          disabled = {true}
+          minimumTrackTintColor = '#249bbf'
+          thumbTintColor = '#249bbf'
+          maximumValue= {100}
+          step={20}
+          value={this.state.value}
+          onValueChange={value => this.setState({ value })}
+        />
+        <Text style = {{marginBottom: 20}}>
+          Up to {this.state.value} kilometers away
+        </Text>
+        
+        </View>
+        </View>
+      
 
 
       <View style={styles.logoutDeleteButtons}>

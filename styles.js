@@ -68,16 +68,16 @@ var styles = StyleSheet.create({
     marginLeft: -40
   },
   messages: {
-    width: 28,
-    height: 24,
+    width: 26,
+    height: 22,
     marginLeft: 70,
-    marginTop: 11
+    marginTop: 16
   },
   profile: {
-    width: 35,
-    height: 35,
+    width: 22,
+    height: 22,
     marginRight: 70,
-    marginTop: 10
+    marginTop: 12
   },
   center: {
     alignItems: "center",
@@ -183,7 +183,7 @@ var styles = StyleSheet.create({
   },
   
   textInput: {
-    width: deviceWidth,
+    //width: deviceWidth,
     padding: 15,
     backgroundColor: "#fff",
     minHeight: 100,
@@ -432,6 +432,15 @@ var styles = StyleSheet.create({
     backgroundColor: 'transparent',
     textAlign: 'center',
     marginBottom: 20,
+  },
+  containerSlider: {
+    
+    
+    alignItems: "stretch",
+    justifyContent: "center",
+    marginRight: 30,
+    marginLeft: 30
+    
   }
 
 });

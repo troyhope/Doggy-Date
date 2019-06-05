@@ -20,7 +20,7 @@ export default createMaterialTopTabNavigator(
         showLabel: true,
         tabBarIcon: ({ focused }) => (
 
-          <Image style={styles.profile} source={require('../assets/blankprofile.png')} />
+          <Image style={styles.profile} source={require('../assets/newprofile.png')} />
         ),
 
       },
