@@ -18,22 +18,22 @@ const slides = [
     key: 'somethun',
     title: 'WELCOME TO DOGGYDATE!',
     text: 'After this introduction you will find different animals or pet enthusiasts to swipe through depending on your preference.',
-    icon2: 'human-greeting',
-    colors: ['#bde1ff', '#155d99'],
+    icon2: 'dog',
+    colors: ['#249bff', '#155d99'],
   },
   {
     key: 'somethun-dos',
     title: 'VIEWING PHOTOS.',
     text: 'Press on a users profile to cycle through their other photos!',
     icon1: 'touch-app',
-    colors: ['#bde1ff', '#155d99'],
+    colors: ['#249bff', '#155d99'],
   },
   {
     key: 'somethun1',
     title: 'SWIPING USERS',
     text: 'Swipe right on a profile if you are interested. \n\nSwipe left on a profile if you are not interested.',
     icon2: 'gesture-swipe-horizontal',
-    colors: ['#bde1ff', '#155d99'],
+    colors: ['#249bff', '#155d99'],
   }
 ];
 

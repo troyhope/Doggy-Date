@@ -72,7 +72,7 @@ class Login extends React.Component {
             <View>
               <Image
                 style={styles.logoMain}
-                source={require("../assets/logotest.png")}
+                source={require("../assets/logotestregular.png")}
               />
             </View>
           </View>

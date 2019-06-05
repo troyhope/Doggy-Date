@@ -32,7 +32,7 @@ export default createMaterialTopTabNavigator(
         showLabel: false,
         tabBarIcon: ({ focused }) => (
 
-          <Image style={Platform.OS === 'android' ?styles.logoAndroid : styles.logo} source={require('../assets/doggydate.png')} />
+          <Image style={Platform.OS === 'android' ?styles.logoAndroid : styles.logo} source={require('../assets/doggydateregular.png')} />
         ),
         
         tabBarOnPress:({navigation, defaultHandler})=>{
