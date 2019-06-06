@@ -186,7 +186,7 @@ class Profiles extends React.Component {
 
       <View style={styles.logoutDeleteButtons}>
         <TouchableOpacity onPress={() => this.props.dispatch(logout())}>
-          <Text style={styles.imgLogout}>Logout</Text>
+          <Text style={styles.imgLogout}>Log out</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() =>
           this.deleteUser()}>

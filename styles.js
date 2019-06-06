@@ -109,7 +109,7 @@ var styles = StyleSheet.create({
   imgLogout: {
     overflow: "hidden",
     textAlign: "center",
-    width: deviceWidth / 2.2,
+    width: deviceWidth / 2.3,
     height: 50,
     borderRadius: 25,
     marginLeft: 15,
@@ -128,7 +128,7 @@ var styles = StyleSheet.create({
   imgDelete: {
     overflow: "hidden",
     textAlign: "center",
-    width: deviceWidth/2.2,
+    width: deviceWidth/2.3,
     height: 50,
     borderRadius: 25,
     marginRight: 15,
