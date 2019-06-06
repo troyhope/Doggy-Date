@@ -17,7 +17,7 @@ const slides = [
   {
     key: 'somethun',
     title: 'WELCOME TO DOGGYDATE!',
-    text: 'After this introduction you will find different animals or pet enthusiasts to swipe through depending on your preference.',
+    text: 'After this introduction you will find different animals or pet enthusiasts to swipe through based on your preference.',
     icon2: 'dog',
     colors: ['#249bff', '#155d99'],
   },
@@ -213,12 +213,14 @@ _renderItem = props => (
       colors={props.colors}
       start={{x: 0, y: .1}} end={{x: .1, y: 1}}
     >
-      
-       <MaterialIcons style={{ backgroundColor: 'transparent', marginTop: 100 }} name={props.icon1} size={200} color="white" />
+      <View style={{marginBottom: 150, alignSelf: 'center', alignItems: 'center'}}>
+       <MaterialIcons style={{ backgroundColor: 'transparent', marginTop: 200, paddingBottom: 10 }} name={props.icon1} size={200} color="white" />
        <MaterialCommunityIcons style={{ backgroundColor: 'transparent' }} name={props.icon2} size={200} color="white" />
+      
       <View>
         <Text style={styles.titleSliders}>{props.title}</Text>
         <Text style={styles.textSliders}>{props.text}</Text>
+      </View>
       </View>
     </LinearGradient>
   );
@@ -264,6 +266,7 @@ _renderItem = props => (
       return <AppIntroSlider
         slides={slides}
         renderItem={this._renderItem}
+        onDone={this._onDone}
         bottomButton
       />
     }

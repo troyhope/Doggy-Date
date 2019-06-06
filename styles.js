@@ -76,7 +76,7 @@ var styles = StyleSheet.create({
   profile: {
     width: 22,
     height: 22,
-    marginRight: 70,
+    marginRight: 72,
     marginTop: 12
   },
   center: {
