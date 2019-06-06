@@ -214,8 +214,8 @@ _renderItem = props => (
       start={{x: 0, y: .1}} end={{x: .1, y: 1}}
     >
       <View style={{marginBottom: 150, alignSelf: 'center', alignItems: 'center'}}>
-       <MaterialIcons style={{ backgroundColor: 'transparent', marginTop: 200, paddingBottom: 10 }} name={props.icon1} size={200} color="white" />
-       <MaterialCommunityIcons style={{ backgroundColor: 'transparent' }} name={props.icon2} size={200} color="white" />
+       <MaterialIcons style={{ backgroundColor: 'transparent', marginTop: 200, paddingBottom: 10 }} name={props.icon1} size={180} color="white" />
+       <MaterialCommunityIcons style={{ backgroundColor: 'transparent' }} name={props.icon2} size={180} color="white" />
       
       <View>
         <Text style={styles.titleSliders}>{props.title}</Text>

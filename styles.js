@@ -423,7 +423,7 @@ var styles = StyleSheet.create({
     backgroundColor: 'transparent',
     textAlign: 'center',
     paddingHorizontal: 16,
-    marginBottom: 220,
+    marginBottom: 240,
     fontSize: 19,
   },
   titleSliders: {
