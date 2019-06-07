@@ -17,6 +17,7 @@ var deviceWidth = Dimensions.get("window").width;
 console.disableYellowBox = true;
 
 import {
+  Alert,
   Text,
   View,
   Image,
@@ -27,17 +28,36 @@ import {
 
 var width = Dimensions.get("window").width; //full width
 
+showAlert = () => {
+    Alert.alert(
+      'Oops!',
+      'You must have one image on your profile at all times. Add another one and then delete this one.',
+      [
+        {text: 'Ok', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+      ],
+      { cancelable: false }
+    )
+  }
+
 class Profiles extends React.Component {
   state = {
     interested: this.props.interested,
     isVisible: false,
-    value: 20
+    value: 20,
+    images: this.props.user.images,
   };
 
+  
+
   deleteImage() {
+    if (this.self.props.user.images.length < 2) {
+      showAlert()
+    
+  } else {
     this.self.props.dispatch(
       deleteImage(this.self.props.user.images, this.key)
     );
+  }
   }
 
   addImage() {
@@ -181,15 +201,38 @@ class Profiles extends React.Component {
         
         </View>
         </View>
+
+          
       
 
 
       <View style={styles.logoutDeleteButtons}>
-        <TouchableOpacity onPress={() => this.props.dispatch(logout())}>
+        
+        <TouchableOpacity onPress={() => Alert.alert(
+          'Are you sure you want to log out?',
+          '',
+          [
+            {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+            {text: 'Logout', onPress: () => this.props.dispatch(logout()), style: 'default'},
+          ],
+          { cancelable: false }
+        )
+          }>
           <Text style={styles.imgLogout}>Log out</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() =>
-          this.deleteUser()}>
+
+
+
+        <TouchableOpacity onPress={() => Alert.alert(
+          'Are you sure you want to delete your profile?',
+          'This action cannot be undone',
+          [
+            {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+            {text: 'Delete', onPress: () => this.deleteUser(), style: 'destructive'},
+          ],
+          { cancelable: false }
+        )
+          }>
           <Text style={styles.imgDelete}>Delete Account</Text>
         </TouchableOpacity>
         </View>

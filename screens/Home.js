@@ -34,6 +34,13 @@ const slides = [
     text: 'Swipe right on a profile if you are interested. \n\nSwipe left on a profile if you are not interested.',
     icon2: 'gesture-swipe-horizontal',
     colors: ['#249bff', '#155d99'],
+  },
+  {
+    key: 'somethun2',
+    title: 'YOUR PROFILE',
+    text: 'Press the + icon to add an image to your profile.\n\nPress on an existing profile image to delete it.\n\nYour profile will automatically update when you navigate back to DOGGYDATE',
+    icon3: 'md-person',
+    colors: ['#249bff', '#155d99'],
   }
 ];
 
@@ -216,6 +223,8 @@ _renderItem = props => (
       <View style={{marginBottom: 150, alignSelf: 'center', alignItems: 'center'}}>
        <MaterialIcons style={{ backgroundColor: 'transparent', marginTop: 200, paddingBottom: 10 }} name={props.icon1} size={180} color="white" />
        <MaterialCommunityIcons style={{ backgroundColor: 'transparent' }} name={props.icon2} size={180} color="white" />
+       <Ionicons style={{ backgroundColor: 'transparent' }} name={props.icon3} size={180} color="white" />
+
       
       <View>
         <Text style={styles.titleSliders}>{props.title}</Text>
